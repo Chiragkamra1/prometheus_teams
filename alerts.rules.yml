@@ -1,0 +1,11 @@
+groups:
+  - name: simple_alert_rule
+    rules:
+      - alert: TestAlert
+        expr: vector(1)  # This always evaluates to true
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "This is a test alert"
+          description: "The alert is just for testing purposes."

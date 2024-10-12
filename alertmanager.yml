@@ -1,0 +1,21 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname', 'severity']
+  group_wait: 10s
+  group_interval: 5m
+  repeat_interval: 10m
+  receiver: 'powerautomate'
+
+receivers:
+  - name: 'powerautomate'
+    webhook_configs:
+      - url: 'https://prod-31.centralindia.logic.azure.com:443/workflows/07335fde6d174df0aa4ef56d1d78942f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=cZSoWEW6OJ1701gpUhmg0ylYYAdEOl-XGPAkCwzVmjg'
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']

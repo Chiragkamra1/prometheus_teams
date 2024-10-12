@@ -1,0 +1,104 @@
+{
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "groupKey": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string"
+        },
+        "receiver": {
+            "type": "string"
+        },
+        "groupLabels": {
+            "type": "object",
+            "properties": {
+                "alertname": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            }
+        },
+        "commonLabels": {
+            "type": "object",
+            "properties": {
+                "alertname": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            }
+        },
+        "commonAnnotations": {
+            "type": "object",
+            "properties": {
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "alerts": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "labels": {
+                        "type": "object",
+                        "properties": {
+                            "alertname": {
+                                "type": "string"
+                            },
+                            "severity": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "annotations": {
+                        "type": "object",
+                        "properties": {
+                            "summary": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "startsAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endsAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "generatorURL": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "version",
+        "groupKey",
+        "status",
+        "receiver",
+        "groupLabels",
+        "commonLabels",
+        "commonAnnotations",
+        "alerts"
+    ]
+}

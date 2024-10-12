@@ -1,0 +1,40 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "🚨 **Prometheus Alert Notification** 🚨",
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "**Alert Name**: @{triggerBody()?['groupLabels']?['alertname']}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "**Severity**: @{triggerBody()?['groupLabels']?['severity']}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "**Status**: @{triggerBody()?['status']}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "**Summary**: @{triggerBody()?['commonAnnotations']?['summary']}.",
+            "wrap": true
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.OpenUrl",
+            "title": "View Alert Details",
+            "url": "https://your-prometheus-server/alerts"
+        }
+    ]
+}

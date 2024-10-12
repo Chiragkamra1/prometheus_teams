@@ -28,19 +28,8 @@ Docker
 Docker Compose
 A Microsoft Teams account and a created Power Automate flow with a webhook for receiving alerts.
 Project Structure
+refer to 'flow.txt' file
 
-project-directory/
-│
-├── prometheus/
-│   ├── prometheus.yml               # Prometheus configuration file
-│   ├── alerts.rules.yml             # Alerting rules for Prometheus
-│   └── data/                        # Prometheus data directory (optional for persistence)
-│
-├── alertmanager/
-│   ├── alertmanager.yml             # Alertmanager configuration file
-│   └── data/                        # Alertmanager data directory (optional for persistence)
-│
-├── docker-compose.yml               # Docker Compose configuration for running Prometheus and Alertmanager
 Setup Instructions
 
 1. Configure Prometheus
